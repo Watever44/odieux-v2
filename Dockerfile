@@ -24,9 +24,9 @@ COPY --from=build /app/target/universal/*.zip .
 RUN unzip *.zip -d ohdieux/
 
 RUN mkdir -p /tmp/ohdieux /data
-RUN chown 2000:2000 /tmp/ohdieux /data
+RUN chown 1000:1000 /tmp/ohdieux /data
 
-USER 2000:2000
+USER 1000:1000
 WORKDIR /data
 
 CMD [ "/app/ohdieux/bin/ohdieux", \
